@@ -8,6 +8,11 @@ export default defineNuxtConfig({
     plugins: [
       tailwindcss(),
     ],
+    test: {
+    globals: true,
+    environment: 'jsdom', // важно для тестов Vue
+    setupFiles: './tests/setup.ts',
+    },
   },
   runtimeConfig: {
     apiSecret: process.env.API_SECRET,
